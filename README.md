@@ -1,2 +1,2 @@
 # rps-game
-a simple rock paper scissors program
+a simple rock paper scissors program!
