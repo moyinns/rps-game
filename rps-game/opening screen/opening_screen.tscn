@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://6t02gfo1lyg"]
+
+[ext_resource type="Script" uid="uid://c00q201416tr" path="res://opening screen/opening_screen.gd" id="1_les45"]
+[ext_resource type="Texture2D" uid="uid://dlwle134vyjam" path="res://rps game stuff/opening screen.PNG" id="1_xmhvo"]
+
+[node name="opening screen" type="Node2D"]
+script = ExtResource("1_les45")
+
+[node name="opening bg" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xmhvo")
+
+[node name="play button" type="Button" parent="."]
+offset_left = 397.0
+offset_top = 301.0
+offset_right = 889.0
+offset_bottom = 338.0
+flat = true
+
+[node name="settings button" type="Button" parent="."]
+offset_left = 397.0
+offset_top = 376.0
+offset_right = 889.0
+offset_bottom = 413.0
+flat = true
+
+[node name="load button" type="Button" parent="."]
+offset_left = 397.0
+offset_top = 451.0
+offset_right = 889.0
+offset_bottom = 489.0
+flat = true
+
+[node name="help button" type="Button" parent="."]
+offset_left = 396.0
+offset_top = 527.0
+offset_right = 888.0
+offset_bottom = 564.0
+flat = true
+
+[node name="quit button" type="Button" parent="."]
+offset_left = 398.0
+offset_top = 601.0
+offset_right = 889.0
+offset_bottom = 639.0
+flat = true
+
+[connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="settings button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="load button" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="help button" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="quit button" to="." method="_on_quit_button_pressed"]
