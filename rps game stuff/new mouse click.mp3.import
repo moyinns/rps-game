@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doc3tot16kisy"
+path="res://.godot/imported/new mouse click.mp3-846cb9ae820a0264d209fcaf7bd18587.mp3str"
+
+[deps]
+
+source_file="res://rps game stuff/new mouse click.mp3"
+dest_files=["res://.godot/imported/new mouse click.mp3-846cb9ae820a0264d209fcaf7bd18587.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

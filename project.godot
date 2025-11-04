@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="rps-game"
+run/main_scene="uid://6t02gfo1lyg"
+config/features=PackedStringArray("4.5", "Mobile")
+config/icon="res://icon.svg"
+<<<<<<<HEADconfig/name="rps-game"
+
+[autoload]
+
+Globals="*res://globals.gd"
+SoundEffects="*res://other/sound_effects.tscn"
+TransitionScreen="*res://other/transition_screen.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="mobile"

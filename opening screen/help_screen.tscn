@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://efwggoman1th"]
+
+[ext_resource type="Script" uid="uid://cdaeem7lk4jbp" path="res://opening screen/help_screen.gd" id="1_b01r0"]
+[ext_resource type="Texture2D" uid="uid://db2hfsm0838t3" path="res://rps game stuff/help screen.PNG" id="1_ejs26"]
+
+[node name="help screen" type="Node2D"]
+script = ExtResource("1_b01r0")
+
+[node name="help bg" type="TextureRect" parent="."]
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 1287.0
+offset_bottom = 721.0
+texture = ExtResource("1_ejs26")
+
+[node name="back to home button" type="Button" parent="."]
+offset_left = 1012.0
+offset_top = 658.0
+offset_right = 1272.0
+offset_bottom = 703.0
+flat = true
+
+[connection signal="pressed" from="back to home button" to="." method="_on_back_to_home_button_pressed"]

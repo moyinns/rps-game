@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg4yavrgl4rw2"]
+
+[ext_resource type="AudioStream" uid="uid://doc3tot16kisy" path="res://rps game stuff/new mouse click.mp3" id="1_akipb"]
+[ext_resource type="Script" uid="uid://cp1lqbfpaek6e" path="res://other/sound_effects.gd" id="2_kyj2a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kyj2a")
+
+[node name="button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_akipb")

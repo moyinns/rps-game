@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://dco7hloiga1jj"]
+
+[ext_resource type="Script" uid="uid://dsegor8lc57mk" path="res://opening screen/settings_screen.gd" id="1_essuo"]
+[ext_resource type="Texture2D" uid="uid://dmu701wd0ylek" path="res://rps game stuff/settings screen.PNG" id="1_vxie3"]
+
+[node name="settings screen" type="Node2D"]
+script = ExtResource("1_essuo")
+
+[node name="settings bg" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vxie3")
+metadata/_edit_use_anchors_ = true
+
+[node name="back to home button" type="Button" parent="."]
+offset_left = 1005.0
+offset_top = 657.0
+offset_right = 1264.0
+offset_bottom = 703.0
+flat = true
+
+[node name="ai button" type="Button" parent="."]
+offset_left = 457.0
+offset_top = 312.0
+offset_right = 732.0
+offset_bottom = 364.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="two player button" type="Button" parent="."]
+offset_left = 816.0
+offset_top = 312.0
+offset_right = 1091.0
+offset_bottom = 364.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="best of one" type="Button" parent="."]
+offset_left = 457.0
+offset_top = 489.0
+offset_right = 553.0
+offset_bottom = 544.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="best of three" type="Button" parent="."]
+offset_left = 638.0
+offset_top = 490.0
+offset_right = 734.0
+offset_bottom = 545.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="best of five" type="Button" parent="."]
+offset_left = 817.0
+offset_top = 488.0
+offset_right = 913.0
+offset_bottom = 543.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="best of seven" type="Button" parent="."]
+offset_left = 997.0
+offset_top = 489.0
+offset_right = 1093.0
+offset_bottom = 544.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="back to home button" to="." method="_on_back_to_home_button_pressed"]
+[connection signal="pressed" from="ai button" to="." method="_on_ai_button_pressed"]
+[connection signal="pressed" from="two player button" to="." method="_on_two_player_button_pressed"]
+[connection signal="pressed" from="best of one" to="." method="_on_best_of_one_pressed"]
+[connection signal="pressed" from="best of three" to="." method="_on_best_of_three_pressed"]
+[connection signal="pressed" from="best of five" to="." method="_on_best_of_five_pressed"]
+[connection signal="pressed" from="best of seven" to="." method="_on_best_of_seven_pressed"]

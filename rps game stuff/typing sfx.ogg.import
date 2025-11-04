@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ct7ss02na5t70"
+path="res://.godot/imported/typing sfx.ogg-04d18575230975ba4b099b05e986a656.oggvorbisstr"
+
+[deps]
+
+source_file="res://rps game stuff/typing sfx.ogg"
+dest_files=["res://.godot/imported/typing sfx.ogg-04d18575230975ba4b099b05e986a656.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,39 @@
+extends Node2D
+
+
+func _ready() -> void:
+	pass
+
+
+
+func _process(_delta: float) -> void:
+	pass
+
+
+func _on_play_button_pressed() -> void:
+	#get_tree().change_scene_to_file()
+	pass
+
+func _on_settings_button_pressed() -> void:
+	SoundEffects.play_button_sound()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://opening screen/settings_screen.tscn")
+
+func _on_load_button_pressed() -> void:
+	SoundEffects.play_button_sound()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://opening screen/load_screen.tscn")
+
+func _on_help_button_pressed() -> void:
+	SoundEffects.play_button_sound()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://opening screen/help_screen.tscn")
+
+func _on_quit_button_pressed() -> void:
+	SoundEffects.play_button_sound()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://opening screen/quit_screen.tscn")
