@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://b81g0110sclil"]
+
+[ext_resource type="Script" uid="uid://ck3laker8dkkw" path="res://main game screens/choose_item_screen.gd" id="1_jfkit"]
+[ext_resource type="Texture2D" uid="uid://dulen4bd305fm" path="res://rps game stuff/choose your item screen.PNG" id="2_hf21m"]
+[ext_resource type="Texture2D" uid="uid://eifa4pgv0wan" path="res://rps game stuff/choose your item screen empty.PNG" id="2_jfkit"]
+[ext_resource type="Texture2D" uid="uid://dhe64j3u3iugh" path="res://rps game stuff/rock.PNG" id="3_sl1im"]
+[ext_resource type="Texture2D" uid="uid://biiet7kof6fks" path="res://rps game stuff/paper.PNG" id="4_u2kb4"]
+[ext_resource type="Texture2D" uid="uid://t4je6uu11mgo" path="res://rps game stuff/scissors.PNG" id="5_0ftg8"]
+[ext_resource type="FontFile" uid="uid://bu6t45u86xt7f" path="res://rps game stuff/Pixel Digivolve.otf" id="6_0w6li"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b824s"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.14901961, 0.31764707, 0.2901961, 1)
+
+[node name="choose item screen" type="Node2D"]
+script = ExtResource("1_jfkit")
+
+[node name="choose item bg" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_jfkit")
+
+[node name="back to home button" type="Button" parent="."]
+offset_left = 1005.0
+offset_top = 657.0
+offset_right = 1265.0
+offset_bottom = 702.0
+flat = true
+
+[node name="rock" type="TextureRect" parent="."]
+offset_left = 63.0
+offset_top = 110.0
+offset_right = 469.0
+offset_bottom = 516.0
+texture = ExtResource("3_sl1im")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="paper" type="TextureRect" parent="."]
+offset_left = 474.0
+offset_top = 139.0
+offset_right = 802.0
+offset_bottom = 475.6491
+texture = ExtResource("4_u2kb4")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="scissors" type="TextureRect" parent="."]
+offset_left = 998.99994
+offset_top = 28.999947
+offset_right = 1373.7843
+offset_bottom = 412.55145
+rotation = 0.8552113
+texture = ExtResource("5_0ftg8")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="rock button" type="Button" parent="."]
+offset_left = 168.0
+offset_top = 490.0
+offset_right = 403.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(0.14901961, 0.31764707, 0.2901961, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("6_0w6li")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_b824s")
+text = "rock"
+metadata/_edit_use_anchors_ = true
+
+[node name="paper button" type="Button" parent="."]
+offset_left = 529.0
+offset_top = 490.0
+offset_right = 764.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(0.14901961, 0.31764707, 0.2901961, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("6_0w6li")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_b824s")
+text = "paper"
+metadata/_edit_use_anchors_ = true
+
+[node name="scissors button" type="Button" parent="."]
+offset_left = 890.0
+offset_top = 490.0
+offset_right = 1125.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(0.14901961, 0.31764707, 0.2901961, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("6_0w6li")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_b824s")
+text = "scissors"
+metadata/_edit_use_anchors_ = true
+
+[node name="choose item bg2" type="TextureRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_hf21m")
+
+[node name="rock description" type="Label" parent="."]
+offset_left = 195.0
+offset_top = 108.0
+offset_right = 371.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("6_0w6li")
+theme_override_font_sizes/font_size = 18
+text = "beats scissors, is beaten by paper"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="rock description2" type="Label" parent="."]
+offset_left = 547.0
+offset_top = 110.0
+offset_right = 748.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("6_0w6li")
+theme_override_font_sizes/font_size = 18
+text = "beats rock, is beaten by scissors"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="back to home button" to="." method="_on_back_to_home_button_pressed"]

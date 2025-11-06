@@ -1,7 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://efwggoman1th"]
+[gd_scene load_steps=7 format=3 uid="uid://efwggoman1th"]
 
 [ext_resource type="Script" uid="uid://cdaeem7lk4jbp" path="res://opening screen/help_screen.gd" id="1_b01r0"]
-[ext_resource type="Texture2D" uid="uid://db2hfsm0838t3" path="res://rps game stuff/help screen.PNG" id="1_ejs26"]
+[ext_resource type="Texture2D" uid="uid://cbqrt6i6eq5ov" path="res://rps game stuff/empty help bg.PNG" id="2_bg6cd"]
+[ext_resource type="FontFile" uid="uid://bu6t45u86xt7f" path="res://rps game stuff/Pixel Digivolve.otf" id="4_x3t44"]
+
+[sub_resource type="Animation" id="Animation_dgunk"]
+resource_name = "typing_help_text"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("help text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_3wl6v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("help text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykmv2"]
+_data = {
+&"RESET": SubResource("Animation_3wl6v"),
+&"typing_help_text": SubResource("Animation_dgunk")
+}
 
 [node name="help screen" type="Node2D"]
 script = ExtResource("1_b01r0")
@@ -11,7 +49,7 @@ offset_left = 7.0
 offset_top = 1.0
 offset_right = 1287.0
 offset_bottom = 721.0
-texture = ExtResource("1_ejs26")
+texture = ExtResource("2_bg6cd")
 
 [node name="back to home button" type="Button" parent="."]
 offset_left = 1012.0
@@ -19,5 +57,20 @@ offset_top = 658.0
 offset_right = 1272.0
 offset_bottom = 703.0
 flat = true
+
+[node name="help text" type="RichTextLabel" parent="."]
+offset_left = 209.0
+offset_top = 112.0
+offset_right = 1082.0
+offset_bottom = 168.0
+theme_override_fonts/normal_font = ExtResource("4_x3t44")
+theme_override_font_sizes/normal_font_size = 18
+text = "players choose rock, paper or scissors. so does the ai/other player. then the game calculates who wins"
+horizontal_alignment = 1
+
+[node name="help text animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ykmv2")
+}
 
 [connection signal="pressed" from="back to home button" to="." method="_on_back_to_home_button_pressed"]

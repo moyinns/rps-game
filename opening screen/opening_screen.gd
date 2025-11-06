@@ -11,8 +11,10 @@ func _process(_delta: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-	#get_tree().change_scene_to_file()
-	pass
+	SoundEffects.play_button_sound()
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://main game screens/choose_item_screen.tscn")
 
 func _on_settings_button_pressed() -> void:
 	SoundEffects.play_button_sound()

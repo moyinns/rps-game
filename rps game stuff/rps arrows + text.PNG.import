@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhe64j3u3iugh"
-path="res://.godot/imported/rock.PNG-78b1f8385cf2b1f8404a1490f8c4e723.ctex"
+uid="uid://ddkrjeqqx1xj7"
+path="res://.godot/imported/rps arrows + text.PNG-c8a01ff4eefc6923080bbf17f705ca6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rps game stuff/rock.PNG"
-dest_files=["res://.godot/imported/rock.PNG-78b1f8385cf2b1f8404a1490f8c4e723.ctex"]
+source_file="res://rps game stuff/rps arrows + text.PNG"
+dest_files=["res://.godot/imported/rps arrows + text.PNG-c8a01ff4eefc6923080bbf17f705ca6b.ctex"]
 
 [params]
 

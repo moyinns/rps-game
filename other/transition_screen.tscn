@@ -1,6 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmla224s20trq"]
+[gd_scene load_steps=9 format=3 uid="uid://dmla224s20trq"]
 
 [ext_resource type="Script" uid="uid://bmedyttrjnaiy" path="res://other/transition_screen.gd" id="1_airn6"]
+[ext_resource type="Texture2D" uid="uid://ddkrjeqqx1xj7" path="res://rps game stuff/rps arrows + text.PNG" id="2_wkd5h"]
+
+[sub_resource type="Animation" id="Animation_h4lj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../rps help:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wkd5h"]
 resource_name = "fade_to_black"
@@ -16,21 +44,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_h4lj8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_j2f2l"]
@@ -49,15 +62,55 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_fyjnt"]
+resource_name = "rps_help_fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../rps help:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_blfvr"]
+resource_name = "rps_help_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../rps help:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fyjnt"]
 _data = {
 &"RESET": SubResource("Animation_h4lj8"),
 &"fade_to_black": SubResource("Animation_wkd5h"),
-&"fade_to_normal": SubResource("Animation_j2f2l")
+&"fade_to_normal": SubResource("Animation_j2f2l"),
+&"rps_help_fade_in": SubResource("Animation_fyjnt"),
+&"rps_help_fade_out": SubResource("Animation_blfvr")
 }
 
 [node name="transition screen" type="CanvasLayer"]
 script = ExtResource("1_airn6")
+
+[node name="rps help" type="TextureRect" parent="."]
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 1287.0
+offset_bottom = 721.0
+texture = ExtResource("2_wkd5h")
 
 [node name="transition colour" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

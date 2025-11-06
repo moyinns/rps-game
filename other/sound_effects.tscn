@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg4yavrgl4rw2"]
+[gd_scene load_steps=5 format=3 uid="uid://bg4yavrgl4rw2"]
 
 [ext_resource type="AudioStream" uid="uid://doc3tot16kisy" path="res://rps game stuff/new mouse click.mp3" id="1_akipb"]
 [ext_resource type="Script" uid="uid://cp1lqbfpaek6e" path="res://other/sound_effects.gd" id="2_kyj2a"]
+[ext_resource type="AudioStream" uid="uid://ct2jidjirhy4b" path="res://rps game stuff/bg music.ogg" id="3_kyj2a"]
+[ext_resource type="AudioStream" uid="uid://ct7ss02na5t70" path="res://rps game stuff/typing sfx.ogg" id="4_atrjp"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,3 +16,12 @@ script = ExtResource("2_kyj2a")
 
 [node name="button" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_akipb")
+
+[node name="bg music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kyj2a")
+volume_db = -3.506
+autoplay = true
+
+[node name="typing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_atrjp")
+volume_db = 9.518

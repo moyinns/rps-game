@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhe64j3u3iugh"
-path="res://.godot/imported/rock.PNG-78b1f8385cf2b1f8404a1490f8c4e723.ctex"
+uid="uid://eifa4pgv0wan"
+path="res://.godot/imported/choose your item screen empty.PNG-513ae0172e792a4faacf7bf4a60e605b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rps game stuff/rock.PNG"
-dest_files=["res://.godot/imported/rock.PNG-78b1f8385cf2b1f8404a1490f8c4e723.ctex"]
+source_file="res://rps game stuff/choose your item screen empty.PNG"
+dest_files=["res://.godot/imported/choose your item screen empty.PNG-513ae0172e792a4faacf7bf4a60e605b.ctex"]
 
 [params]
 
