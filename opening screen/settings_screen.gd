@@ -37,6 +37,5 @@ func _on_best_of_seven_pressed() -> void:
 	SoundEffects.play_button_sound()
 	Globals.no_of_rounds = 7
 
-
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(value))
