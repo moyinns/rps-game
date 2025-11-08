@@ -1,8 +1,10 @@
 extends Node2D
 
+@onready var win_count: Label = $"win count"
+
 
 func _ready() -> void:
-	pass
+	win_count.text = "wins: "+str(Globals.wins)
 
 
 

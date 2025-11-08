@@ -331,6 +331,7 @@ script = ExtResource("1_8o68l")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_m1phy")
+metadata/_edit_use_anchors_ = true
 
 [node name="title" type="Label" parent="."]
 offset_left = 189.0
@@ -341,6 +342,7 @@ theme_override_fonts/font = ExtResource("2_55m5f")
 theme_override_font_sizes/font_size = 50
 text = "..."
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="vs" type="Label" parent="."]
 offset_left = 96.0
@@ -352,6 +354,7 @@ theme_override_font_sizes/font_size = 60
 text = "VS"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="win text" type="Label" parent="."]
 offset_left = 473.0
@@ -365,6 +368,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_8o68l")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="animated choosing" type="AnimatedSprite2D" parent="."]
 position = Vector2(994.00006, 339.00003)
@@ -379,6 +383,7 @@ offset_right = 455.0
 offset_bottom = 511.28198
 texture = ExtResource("5_dqlqu")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="paper player" type="TextureRect" parent="."]
 offset_left = 103.0
@@ -387,6 +392,7 @@ offset_right = 444.0
 offset_bottom = 511.28198
 texture = ExtResource("4_v3f1w")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="scissors player" type="TextureRect" parent="."]
 offset_left = 103.0
@@ -395,10 +401,11 @@ offset_right = 455.0
 offset_bottom = 511.28198
 texture = ExtResource("6_mcq2j")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="flash" type="ColorRect" parent="."]
-visible = false
 offset_right = 1293.0
 offset_bottom = 731.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="animation_finished" from="animated choosing" to="." method="_on_animated_choosing_animation_finished"]

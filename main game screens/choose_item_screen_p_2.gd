@@ -20,7 +20,7 @@ extends Node2D
 @onready var rock_animation: AnimationPlayer = $"rock control/rock animation"
 @onready var paper_animation: AnimationPlayer = $"paper control/paper animation"
 @onready var scissors_animation: AnimationPlayer = $"scissors control/scissors animation"
-@onready var title: Label = $title
+@onready var player_2_label: Label = $"player 2 label"
 
 
 
@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 
 func _on_rock_button_pressed() -> void:
 	SoundEffects.play_button_sound()
-	Globals.player1_choice = "rock"
+	Globals.player2_choice = "rock"
 	rock_animation.play("rock_to_middle")
 	paper_animation.play("paper_fade_out")
 	scissors_animation.play("scissors_fade_out")
@@ -54,33 +54,26 @@ func _on_rock_button_pressed() -> void:
 	tween.tween_property(back_to_home_button, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tween.finished
 	chosen_label.visible = false
-	chosen_label.text = "you chose "+str(Globals.player1_choice)+"!"
+	chosen_label.text = "you chose "+str(Globals.player2_choice)+"!"
 	typing_chosen_label()
 	await chosen_label_animation.animation_finished
 	await get_tree().create_timer(1.0).timeout
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	if Globals.player_type == "ai":
-		get_tree().change_scene_to_file("res://main game screens/ai_choose_item_screen.tscn")
-	elif Globals.player_type == "two player":
-		get_tree().change_scene_to_file("res://main game screens/choose_item_screen_p_2.tscn")
+	get_tree().change_scene_to_file("res://main game screens/player_1_vs_player_2.tscn")
+
 
 func typing_chosen_label():
 	chosen_label_animation.play("typing_chosen")
 	chosen_label.visible = true
 	SoundEffects.play_typing_sound()
-	#chosen_label_animation.connect("animation_finished", self._on_animation_finished)
 	await chosen_label_animation.animation_finished
 	SoundEffects.stop_typing_sound()
 
-#func _on_animation_finished(anim_name):
-	#if anim_name == "typing_chosen":
-		#SoundEffects.stop_typing_sound()
-	
 	
 func _on_paper_button_pressed() -> void:
 	SoundEffects.play_button_sound()
-	Globals.player1_choice = "paper"
+	Globals.player2_choice = "paper"
 	rock_animation.play("rock_fade_out")
 	scissors_animation.play("scissors_fade_out")
 	await rock_animation.animation_finished
@@ -91,20 +84,18 @@ func _on_paper_button_pressed() -> void:
 	tween.tween_property(back_to_home_button, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tween.finished
 	chosen_label.visible = false
-	chosen_label.text = "you chose "+str(Globals.player1_choice)+"!"
+	chosen_label.text = "you chose "+str(Globals.player2_choice)+"!"
 	typing_chosen_label()
 	await chosen_label_animation.animation_finished
 	await get_tree().create_timer(1.0).timeout
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	if Globals.player_type == "ai":
-		get_tree().change_scene_to_file("res://main game screens/ai_choose_item_screen.tscn")
-	elif Globals.player_type == "two player":
-		get_tree().change_scene_to_file("res://main game screens/choose_item_screen_p_2.tscn")
+	get_tree().change_scene_to_file("res://main game screens/player_1_vs_player_2.tscn")
+
 	
 func _on_scissors_button_pressed() -> void:
 	SoundEffects.play_button_sound()
-	Globals.player1_choice = "scissors"
+	Globals.player2_choice = "scissors"
 	scissors_animation.play("scissors_to_middle")
 	rock_animation.play("rock_fade_out")
 	paper_animation.play("paper_fade_out")
@@ -116,16 +107,14 @@ func _on_scissors_button_pressed() -> void:
 	tween.tween_property(back_to_home_button, "modulate:a", 1.0, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tween.finished
 	chosen_label.visible = false
-	chosen_label.text = "you chose "+str(Globals.player1_choice)+"!"
+	chosen_label.text = "you chose "+str(Globals.player2_choice)+"!"
 	typing_chosen_label()
 	await chosen_label_animation.animation_finished
 	await get_tree().create_timer(1.0).timeout
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	if Globals.player_type == "ai":
-		get_tree().change_scene_to_file("res://main game screens/ai_choose_item_screen.tscn")
-	elif Globals.player_type == "two player":
-		get_tree().change_scene_to_file("res://main game screens/choose_item_screen_p_2.tscn")
+	get_tree().change_scene_to_file("res://main game screens/player_1_vs_player_2.tscn")
+
 
 func _on_back_to_home_button_pressed() -> void:
 	SoundEffects.play_button_sound()
