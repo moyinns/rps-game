@@ -55,16 +55,24 @@ func _on_rock_button_pressed() -> void:
 	chosen_label.visible = false
 	chosen_label.text = "you chose "+str(Globals.player1_choice)+"!"
 	typing_chosen_label()
+	await chosen_label_animation.animation_finished
+	await get_tree().create_timer(1.0).timeout
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	if Globals.player_type == "ai":
+		get_tree().change_scene_to_file("res://main game screens/ai_choose_item_screen.tscn")
 
 func typing_chosen_label():
 	chosen_label_animation.play("typing_chosen")
 	chosen_label.visible = true
 	SoundEffects.play_typing_sound()
-	chosen_label_animation.connect("animation_finished", self._on_animation_finished)
+	#chosen_label_animation.connect("animation_finished", self._on_animation_finished)
+	await chosen_label_animation.animation_finished
+	SoundEffects.stop_typing_sound()
 
-func _on_animation_finished(anim_name):
-	if anim_name == "typing_chosen":
-		SoundEffects.stop_typing_sound()
+#func _on_animation_finished(anim_name):
+	#if anim_name == "typing_chosen":
+		#SoundEffects.stop_typing_sound()
 	
 	
 func _on_paper_button_pressed() -> void:
@@ -82,6 +90,12 @@ func _on_paper_button_pressed() -> void:
 	chosen_label.visible = false
 	chosen_label.text = "you chose "+str(Globals.player1_choice)+"!"
 	typing_chosen_label()
+	await chosen_label_animation.animation_finished
+	await get_tree().create_timer(1.0).timeout
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	if Globals.player_type == "ai":
+		get_tree().change_scene_to_file("res://main game screens/ai_choose_item_screen.tscn")
 	
 func _on_scissors_button_pressed() -> void:
 	SoundEffects.play_button_sound()
@@ -99,6 +113,12 @@ func _on_scissors_button_pressed() -> void:
 	chosen_label.visible = false
 	chosen_label.text = "you chose "+str(Globals.player1_choice)+"!"
 	typing_chosen_label()
+	await chosen_label_animation.animation_finished
+	await get_tree().create_timer(1.0).timeout
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	if Globals.player_type == "ai":
+		get_tree().change_scene_to_file("res://main game screens/ai_choose_item_screen.tscn")
 
 func _on_back_to_home_button_pressed() -> void:
 	SoundEffects.play_button_sound()

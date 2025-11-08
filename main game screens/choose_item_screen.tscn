@@ -17,21 +17,6 @@ border_color = Color(0.14901961, 0.31764707, 0.2901961, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjahx"]
 
-[sub_resource type="Animation" id="Animation_cjahx"]
-resource_name = "rock_to_middle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rock control:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(350, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_u2kb4"]
 length = 0.001
 tracks/0/type = "value"
@@ -83,22 +68,6 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_0ftg8"]
-resource_name = "rock_fade_out"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rock control:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_332qf"]
 resource_name = "rock_button_fade_out"
 length = 0.5
@@ -127,21 +96,13 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ftg8"]
-_data = {
-&"RESET": SubResource("Animation_u2kb4"),
-&"rock_button_fade_out": SubResource("Animation_332qf"),
-&"rock_fade_out": SubResource("Animation_0ftg8"),
-&"rock_to_middle": SubResource("Animation_cjahx")
-}
-
-[sub_resource type="Animation" id="Animation_0w6li"]
-resource_name = "paper_fade_out"
+[sub_resource type="Animation" id="Animation_0ftg8"]
+resource_name = "rock_fade_out"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("rock control:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -149,6 +110,29 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cjahx"]
+resource_name = "rock_to_middle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rock control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(350, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ftg8"]
+_data = {
+&"RESET": SubResource("Animation_u2kb4"),
+&"rock_button_fade_out": SubResource("Animation_332qf"),
+&"rock_fade_out": SubResource("Animation_0ftg8"),
+&"rock_to_middle": SubResource("Animation_cjahx")
 }
 
 [sub_resource type="Animation" id="Animation_b824s"]
@@ -218,30 +202,8 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxkk2"]
-_data = {
-&"RESET": SubResource("Animation_b824s"),
-&"paper_button_fade_out": SubResource("Animation_2suu6"),
-&"paper_fade_out": SubResource("Animation_0w6li")
-}
-
-[sub_resource type="Animation" id="Animation_yxkk2"]
-resource_name = "scissors_to_middle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-363, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_i8dhp"]
-resource_name = "scissors_fade_out"
+[sub_resource type="Animation" id="Animation_0w6li"]
+resource_name = "paper_fade_out"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -254,6 +216,13 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxkk2"]
+_data = {
+&"RESET": SubResource("Animation_b824s"),
+&"paper_button_fade_out": SubResource("Animation_2suu6"),
+&"paper_fade_out": SubResource("Animation_0w6li")
 }
 
 [sub_resource type="Animation" id="Animation_ntu31"]
@@ -335,12 +304,58 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_i8dhp"]
+resource_name = "scissors_fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yxkk2"]
+resource_name = "scissors_to_middle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-363, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_332qf"]
 _data = {
 &"RESET": SubResource("Animation_ntu31"),
 &"scissors_button_fade_out": SubResource("Animation_juvs7"),
 &"scissors_fade_out": SubResource("Animation_i8dhp"),
 &"scissors_to_middle": SubResource("Animation_yxkk2")
+}
+
+[sub_resource type="Animation" id="Animation_fpsjk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_snqlq"]
@@ -357,21 +372,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_fpsjk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o7c68"]
