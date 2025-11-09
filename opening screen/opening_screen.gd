@@ -5,11 +5,12 @@ extends Node2D
 
 func _ready() -> void:
 	win_count.text = "wins: "+str(Globals.wins)
+	Globals.rounds_played = 0
 
 
 
 func _process(_delta: float) -> void:
-	pass
+	win_count.text = "wins: "+str(Globals.wins)
 
 
 func _on_play_button_pressed() -> void:

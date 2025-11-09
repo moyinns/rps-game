@@ -1,8 +1,10 @@
 extends Node2D
 
+@onready var successful_save_label: Label = $"successful save label"
+
 
 func _ready() -> void:
-	pass
+	successful_save_label.visible = false
 
 func _process(_delta: float) -> void:
 	pass
@@ -39,3 +41,14 @@ func _on_best_of_seven_pressed() -> void:
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(value))
+
+func _on_save_button_pressed() -> void:
+	SoundEffects.play_button_sound()
+	var file = FileAccess.open(Globals.save_path, FileAccess.WRITE)
+	file.store_var(Globals.wins)
+	file.store_var(Globals.player_type)
+	file.store_var(Globals.no_of_rounds)
+	file.close()
+	successful_save_label.visible = true
+	await get_tree().create_timer(2).timeout
+	successful_save_label.visible = false

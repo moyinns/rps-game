@@ -7,3 +7,4 @@ var player2_choice = ""
 var ai_choice = ""
 var wins = 0
 var rounds_played = 0
+var save_path = "user://variable.save"

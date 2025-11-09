@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dco7hloiga1jj"]
+[gd_scene load_steps=6 format=3 uid="uid://dco7hloiga1jj"]
 
 [ext_resource type="Script" uid="uid://dsegor8lc57mk" path="res://opening screen/settings_screen.gd" id="1_essuo"]
 [ext_resource type="Texture2D" uid="uid://dmu701wd0ylek" path="res://rps game stuff/settings screen.PNG" id="1_vxie3"]
+[ext_resource type="FontFile" uid="uid://bu6t45u86xt7f" path="res://rps game stuff/Pixel Digivolve.otf" id="3_l26j4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8vhg"]
+bg_color = Color(0.24705882, 0.4627451, 0.41960785, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.18039216, 0.36078432, 0.32941177, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80ld6"]
 
 [node name="settings screen" type="Node2D"]
 script = ExtResource("1_essuo")
@@ -75,6 +86,31 @@ offset_bottom = 283.0
 max_value = 1.5
 step = 0.001
 
+[node name="save button" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 649.0
+offset_right = 275.0
+offset_bottom = 708.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_l26j4")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8vhg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_80ld6")
+text = "save game"
+metadata/_edit_use_anchors_ = true
+
+[node name="successful save label" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 667.0
+offset_right = 924.0
+offset_bottom = 726.0
+theme_override_fonts/font = ExtResource("3_l26j4")
+theme_override_font_sizes/font_size = 16
+text = "save successful!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="back to home button" to="." method="_on_back_to_home_button_pressed"]
 [connection signal="pressed" from="ai button" to="." method="_on_ai_button_pressed"]
 [connection signal="pressed" from="two player button" to="." method="_on_two_player_button_pressed"]
@@ -83,3 +119,4 @@ step = 0.001
 [connection signal="pressed" from="best of five" to="." method="_on_best_of_five_pressed"]
 [connection signal="pressed" from="best of seven" to="." method="_on_best_of_seven_pressed"]
 [connection signal="value_changed" from="volume slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="save button" to="." method="_on_save_button_pressed"]

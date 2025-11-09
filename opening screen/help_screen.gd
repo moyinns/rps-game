@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_back_to_home_button_pressed() -> void:
 	SoundEffects.play_button_sound()
+	SoundEffects.stop_typing_sound()
 	TransitionScreen.transition_rps_fade_out()
 	#await TransitionScreen.transition_animation.animation_finished
 	TransitionScreen.transition()
