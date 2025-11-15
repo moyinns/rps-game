@@ -9,11 +9,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_back_to_home_button_pressed() -> void:
+func _on_back_to_home_button_pressed() -> void: # this takes u back to the opening screen
 	SoundEffects.play_button_sound()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	get_tree().change_scene_to_file("res://opening screen/opening_screen.tscn")
+
+# all these functions change the value of the global variables depending on what settings were picked
 
 func _on_ai_button_pressed() -> void:
 	SoundEffects.play_button_sound()
@@ -42,7 +44,7 @@ func _on_best_of_seven_pressed() -> void:
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(value))
 
-func _on_save_button_pressed() -> void:
+func _on_save_button_pressed() -> void: # this saves the game / overwrites a save
 	SoundEffects.play_button_sound()
 	var file = FileAccess.open(Globals.save_path, FileAccess.WRITE)
 	file.store_var(Globals.wins)

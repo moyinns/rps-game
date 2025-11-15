@@ -3,12 +3,12 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready() -> void: # types in the help text, and also calls the function to stop the typing sound
 	help_text_animation.play("typing_help_text")
 	SoundEffects.play_typing_sound()
 	help_text_animation.connect("animation_finished", self._on_animation_finished)
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(anim_name): # stop the typing sound when all the text has been typed in
 	if anim_name == "typing_help_text":
 		SoundEffects.stop_typing_sound()
 		TransitionScreen.transition_rps_help()

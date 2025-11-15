@@ -27,8 +27,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	rock_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	paper_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	rock_control.mouse_filter = Control.MOUSE_FILTER_IGNORE  # done so the control nodes dont block clicks
+	paper_control.mouse_filter = Control.MOUSE_FILTER_IGNORE # basc so you can still click on the buttons while theyre in the control thingy
 	scissors_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	back_to_home_button_cover.modulate.a = 0
 	title_button_cover.modulate.a = 0
@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_rock_button_pressed() -> void:
+func _on_rock_button_pressed() -> void: # moves rock to middle + gets rid of others + displays what you choose
 	SoundEffects.play_button_sound()
 	Globals.player1_choice = "rock"
 	rock_animation.play("rock_to_middle")
@@ -65,7 +65,7 @@ func _on_rock_button_pressed() -> void:
 	elif Globals.player_type == "two player":
 		get_tree().change_scene_to_file("res://main game screens/choose_item_screen_p_2.tscn")
 
-func typing_chosen_label():
+func typing_chosen_label():  # types in what was chosen
 	chosen_label_animation.play("typing_chosen")
 	chosen_label.visible = true
 	SoundEffects.play_typing_sound()
@@ -78,7 +78,7 @@ func typing_chosen_label():
 		#SoundEffects.stop_typing_sound()
 	
 	
-func _on_paper_button_pressed() -> void:
+func _on_paper_button_pressed() -> void: # gets rid of others + displays what you choose
 	SoundEffects.play_button_sound()
 	Globals.player1_choice = "paper"
 	rock_animation.play("rock_fade_out")
@@ -102,7 +102,7 @@ func _on_paper_button_pressed() -> void:
 	elif Globals.player_type == "two player":
 		get_tree().change_scene_to_file("res://main game screens/choose_item_screen_p_2.tscn")
 	
-func _on_scissors_button_pressed() -> void:
+func _on_scissors_button_pressed() -> void: # moves scissors to middle + gets rid of others + displays what you choose
 	SoundEffects.play_button_sound()
 	Globals.player1_choice = "scissors"
 	scissors_animation.play("scissors_to_middle")
@@ -127,7 +127,7 @@ func _on_scissors_button_pressed() -> void:
 	elif Globals.player_type == "two player":
 		get_tree().change_scene_to_file("res://main game screens/choose_item_screen_p_2.tscn")
 
-func _on_back_to_home_button_pressed() -> void:
+func _on_back_to_home_button_pressed() -> void: # tales you back to the opening screen
 	SoundEffects.play_button_sound()
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished

@@ -11,30 +11,24 @@ func _ready() -> void:
 	rps_help.visible = false
 	transition_animation.animation_finished.connect(_on_animation_finished)
 	
-func transition():
+func transition(): # plays the fade to black transition
 	transition_colour.visible = true
-	#if rps_help.visible == true:
-		#transition_animation.play("rps_help_fade_out") # SORT OUT ERROR HERE!
-		#rps_help.visible = false
 	transition_animation.play("fade_to_black")
 
-func transition_rps_fade_out():
-	transition_animation.play("rps_help_fade_out")
+func transition_rps_fade_out(): # makes the rps help image fade out
+	transition_animation.play("rps_help_fade_out") 	# in the future, ill use a tween, this was a tad bit messy ;(
 	await transition_animation.animation_finished
 	rps_help.visible = false
 	
-func transition_rps_help():
+func transition_rps_help(): # makes the rps help image fade in
 	rps_help.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	rps_help.modulate.a = 0.0 
 	rps_help.visible = true
 	transition_animation.play("rps_help_fade_in")
 
 func _on_animation_finished(anim_name):
-	if anim_name == "fade_to_black":
+	if anim_name == "fade_to_black": # checks if the fade to black animation has been played, and plays the fade to normal animation
 		on_transition_finished.emit()
 		transition_animation.play("fade_to_normal")
 	elif anim_name == "fade_to_normal":
 		transition_colour.visible = false
-	#elif anim_name == "rps_help_fade_in":
-		#rps_help.visible = true
-		#rps_help.modulate.a = 1

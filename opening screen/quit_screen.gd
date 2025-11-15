@@ -7,5 +7,5 @@ func _ready() -> void:
 
 
 
-func _on_quit_timer_timeout() -> void:
+func _on_quit_timer_timeout() -> void: # this quits the game after 1.5 secs
 	get_tree().quit()

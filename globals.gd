@@ -1,5 +1,5 @@
 extends Node
-
+# my globals file, stores variables i can access at any point throughout the file
 var player_type = "ai"
 var no_of_rounds = 1
 var player1_choice = ""
